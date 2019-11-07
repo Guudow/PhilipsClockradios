@@ -9,9 +9,109 @@ public class ContextClockradio {
     private Date mTime;
     private String mDisplayText;
     public boolean isClockRunning = false;
-
-
+    private double amFrekvens = 99;
+    private double fmFrekvens = 100.2;
+    public double [] amFrekvenser = new double[10];
+    public double [] fmFrekvenser = new double[10];
+    public boolean choosToSave = false;
     public static MainUI ui;
+
+    public ContextClockradio(State currentState, Date mTime, String mDisplayText,
+                             boolean isClockRunning, double amFrekvens,
+                             double fmFrekvens, double[] amFrekvenser,
+                             double[] fmFrekvenser, boolean choosToSave) {
+
+        this.currentState = currentState;
+        this.mTime = mTime;
+        this.mDisplayText = mDisplayText;
+        this.isClockRunning = isClockRunning;
+        this.amFrekvens = amFrekvens;
+        this.fmFrekvens = fmFrekvens;
+        this.amFrekvenser = amFrekvenser;
+        this.fmFrekvenser = fmFrekvenser;
+        this.choosToSave = choosToSave;
+    }
+
+    public State getCurrentState() {
+        return currentState;
+    }
+
+    public void setCurrentState(State currentState) {
+        this.currentState = currentState;
+    }
+
+    public Date getmTime() {
+        return mTime;
+    }
+
+    public void setmTime(Date mTime) {
+        this.mTime = mTime;
+    }
+
+    public String getmDisplayText() {
+        return mDisplayText;
+    }
+
+    public void setmDisplayText(String mDisplayText) {
+        this.mDisplayText = mDisplayText;
+    }
+
+    public boolean isClockRunning() {
+        return isClockRunning;
+    }
+
+    public void setClockRunning(boolean clockRunning) {
+        isClockRunning = clockRunning;
+    }
+
+    public double getAmFrekvens() {
+        return amFrekvens;
+    }
+
+    public void setAmFrekvens(double amFrekvens) {
+        this.amFrekvens = amFrekvens;
+    }
+
+    public double getFmFrekvens() {
+        return fmFrekvens;
+    }
+
+    public void setFmFrekvens(double fmFrekvens) {
+        this.fmFrekvens = fmFrekvens;
+    }
+
+    public double[] getAmFrekvenser() {
+        return amFrekvenser;
+    }
+
+    public void setAmFrekvenser(double[] amFrekvenser) {
+        this.amFrekvenser = amFrekvenser;
+    }
+
+    public double[] getFmFrekvenser() {
+        return fmFrekvenser;
+    }
+
+    public void setFmFrekvenser(double[] fmFrekvenser) {
+        this.fmFrekvenser = fmFrekvenser;
+    }
+
+    public boolean isValgtForAtGemme() {
+        return choosToSave;
+    }
+
+    public void setValgtForAtGemme(boolean valgtForAtGemme) {
+        this.choosToSave = valgtForAtGemme;
+    }
+
+    public static MainUI getUi() {
+        return ui;
+    }
+
+    public static void setUi(MainUI ui) {
+        ContextClockradio.ui = ui;
+    }
+
 
     public ContextClockradio(MainUI context){
         ui = context;
